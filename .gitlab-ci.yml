@@ -1,0 +1,81 @@
+ stages:
+   - test
+
+ html-checker:
+   stage: test
+   before_script:
+   - bash
+   - >
+    if [[ $(find . -type f -name '*.html' | wc -l) -eq 0 ]]; then
+        exit 0
+    fi
+   - apt-get update
+   - apt-get -qq -y install npm curl
+   - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+   - npm -qq -y install -g htmlhint@^1.1.4
+   - export NVM_DIR="${HOME}/.nvm"
+   - \. "$NVM_DIR/nvm.sh"
+   - nvm install node
+   script:
+   - htmlhint src/
+
+ css-checker:
+   stage: test
+   before_script:
+   - bash
+   - >
+    if [[ $(find . -type f -name '*.css' | wc -l) -eq 0 ]]; then
+        exit 0
+    fi
+   - apt-get update
+   - curl -fsSL https://deb.nodesource.com/setup_current.x | bash
+   - apt-get install -y nodejs
+   - curl -qL https://www.npmjs.com/install.sh | sh
+   - npm -qq -y install -g stylelint@^15.11.0 stylelint-config-standard@34.0.0
+   script:
+   - stylelint src/css/*.css
+
+ js-checker:
+   stage: test
+   before_script:
+   - bash
+   - >
+    if [[ $(find . -type f -name '*.js' | wc -l) -eq 0 ]]; then
+        exit 0
+    fi
+   - apt-get update
+   - apt-get -qq -y install npm
+   - npm -qq -y install -g jshint@^2.13.6
+   script:
+   - jshint src/.
+
+ xml-checker:
+   stage: test
+   before_script:
+   - skipValidation=0;
+   - directoryToTestNormal="xml";
+   - dirExists=$(find . -type d);
+   - apt-get update
+   - apt-get -qq -y install libxml2-utils
+   script:
+   - xmlErrorPattern="error";
+   - echo "Validating xsd for School:";
+   - xsdErrorsNormal=$(xmllint --schema ./$directoryToTestNormal/school.xsd --noout ./$directoryToTestNormal/school.xml);
+   - >
+     if echo "$xsdErrorsNormal" | grep -q "$xmlErrorPattern"; then
+       echo "ERROR: there are some errors in school.xsd";
+       echo $xsdErrorsNormal;
+       exit 1;
+     else
+       echo "OK: there are no errors in XML";
+     fi
+   - xmlErrorsNormal=$(xmllint --schema ./$directoryToTestNormal/books.xsd --noout ./$directoryToTestNormal/books.xml);
+   - >
+     if echo "$xmlErrorsNormal" | grep -q "$xmlErrorPattern"; then
+       echo "ERROR: there are some errors in books.xml";
+       echo $xmlErrorsNormal;
+       exit 1;
+     else
+       echo "OK: there are no errors in XML";
+       exit 0;
+     fi
