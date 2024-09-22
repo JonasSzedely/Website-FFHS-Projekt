@@ -45,6 +45,7 @@ body {
     height: 100vh; /* 100% der Höhe des Viewports */
     background-color: white;
     text-align: center;
+
 }
 .Lachenzelg img {
     width: 100vw;
@@ -54,12 +55,16 @@ body {
 /*Einstellungen für alle Mannschaften */
 .Mannschaften {
     font-size: 0.55vw;
+    /*border-top: 0.75vw solid gray*/
+
 }
 
 /*Einstellungen zur Darstellung der Bilde rund Texte der Manschaften */
 .Team {
     display: flex;
     height: auto;
+    /*border-bottom: 0.75vw solid gray;
+    border-top: none;*/
 }
 .Team img {
     width: 100%;
