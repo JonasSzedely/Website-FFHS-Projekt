@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+
+
+.header {
+    position: sticky;
+    top: 0;
+    padding: 0.5vw 100px;
+    background: #2475ff;
+    color: black;
+    text-align: center;
+    font-size: 1vw;
+}
+.header a:link,
+.header a:visited {
+    background-color: #2475ff;
+    color: black;
+    padding: 0.5vw 100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.header a:hover,
+.header a:active {
+    background-color: whitesmoke;
+}
+
+
+
+.Lachenzelg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 100% der Höhe des Viewports */
+    background-color: white;
+    text-align: center;
+}
+
+    .Lachenzelg img {
+        width: 100vw;
+        object-fit: cover;
+    }
+
+
+
+.Mannschaften {
+    font-size: 0.55vw;
+}
+
+.Team {
+    display: flex;
+    height: auto;
+}
+    .Team img {
+        width: 100%;
+        height: auto;
+        max-width: 50%; /* Maximal 50% der Breite des Containers */
+        object-fit: contain; /* Beibehaltung des Seitenverhältnisses */
+        }
+
+
+
+.TeamText {
+    width: 50%;
+    background-color: #2475ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5%;
+    box-sizing: border-box;
+
+
+}
