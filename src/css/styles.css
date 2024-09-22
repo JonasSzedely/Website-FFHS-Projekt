@@ -12,6 +12,7 @@ body {
 *::before,
 *::after {
     box-sizing: inherit;
+}
 
 
 .header {
@@ -81,6 +82,4 @@ body {
     justify-content: center;
     padding: 5%;
     box-sizing: border-box;
-
-
 }
