@@ -6,11 +6,6 @@ body {
     font-family: Arial, sans-serif;
     box-sizing: border-box;
 }
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
-}
 
 /*Einstellungen für den Header */
 .header {
@@ -45,7 +40,6 @@ body {
     height: 100vh; /* 100% der Höhe des Viewports */
     background-color: white;
     text-align: center;
-
 }
 .Lachenzelg img {
     width: 100vw;
@@ -56,7 +50,6 @@ body {
 .Mannschaften {
     font-size: 0.55vw;
     /*border-top: 0.75vw solid gray*/
-
 }
 
 /*Einstellungen zur Darstellung der Bilde rund Texte der Manschaften */
