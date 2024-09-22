@@ -6,15 +6,13 @@ body {
     font-family: Arial, sans-serif;
     box-sizing: border-box;
 }
-
-
 *,
 *::before,
 *::after {
     box-sizing: inherit;
 }
 
-
+/*Einstellungen für den Header */
 .header {
     position: sticky;
     top: 0;
@@ -33,14 +31,13 @@ body {
     text-decoration: none;
     display: inline-block;
 }
-
 .header a:hover,
 .header a:active {
     background-color: whitesmoke;
 }
 
 
-
+/*Einstellungen für den Anfang der Seite mit dem Logo */
 .Lachenzelg {
     display: flex;
     justify-content: center;
@@ -49,31 +46,27 @@ body {
     background-color: white;
     text-align: center;
 }
+.Lachenzelg img {
+    width: 100vw;
+    object-fit: cover;
+}
 
-    .Lachenzelg img {
-        width: 100vw;
-        object-fit: cover;
-    }
-
-
-
+/*Einstellungen für alle Mannschaften */
 .Mannschaften {
     font-size: 0.55vw;
 }
 
+/*Einstellungen zur Darstellung der Bilde rund Texte der Manschaften */
 .Team {
     display: flex;
     height: auto;
 }
-    .Team img {
-        width: 100%;
-        height: auto;
-        max-width: 50%; /* Maximal 50% der Breite des Containers */
-        object-fit: contain; /* Beibehaltung des Seitenverhältnisses */
-        }
-
-
-
+.Team img {
+    width: 100%;
+    height: auto;
+    max-width: 50%; /* Maximal 50% der Breite des Containers */
+    object-fit: contain; /* Beibehaltung des Seitenverhältnisses */
+}
 .TeamText {
     width: 50%;
     background-color: #2475ff;
