@@ -1,76 +1,352 @@
-body {
+/*
+Projekt Infos
+
+verwendete Hauptfarbe: #00509c
+
+*/
+
+
+
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    height: 100%;
-    width: 100%;
-    font-family: Arial, sans-serif;
-    box-sizing: border-box;
+
+
+}
+h6 {
+    font-size: 1.5em;
+}
+h5 {
+    font-size: 1em;
 }
 
-/*Einstellungen für den Header */
+body {
+    font-family: "Oswald", sans-serif;
+}
+
+
+
+/*Einstellungen für den Header*/
+
+
 .header {
     position: sticky;
     top: 0;
-    padding: 0.5vw 100px;
-    background: #2475ff;
-    color: black;
-    text-align: center;
-    font-size: 1vw;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    font-size: 1em;
+    margin: 0 auto;
+    border-bottom: lightgrey solid 1px;
+    justify-content: center;
+    align-items: center;
 }
-.header a:link,
-.header a:visited {
-    background-color: #2475ff;
+.header .logo {
+    position: absolute;
+    left: 10px;
+}
+.header .logo img{
+    height: 50px;
+}
+
+/* Burger-Menü-Icon */
+.burger-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+
+.nav-container {
+    position: relative;
+    width: 100%;
+    max-width: 1500px;
+    display: flex;
+    justify-content: flex-start;
+    height: 50px;
+}
+.nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2px;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.nav1 .nav2 .nav3 {
+    width: 200px;
+}
+.header a {
     color: black;
-    padding: 0.5vw 100px;
-    text-align: center;
     text-decoration: none;
-    display: inline-block;
+    padding: 10px 20px;
+    flex: 1;
+    text-align: center;
+    transition: color 0.3s;
 }
 .header a:hover,
 .header a:active {
-    background-color: whitesmoke;
+    color: #00509c;
 }
 
 
-/*Einstellungen für den Anfang der Seite mit dem Logo */
+
+/*Einstellungen für Startseite*/
 .Lachenzelg {
+    max-width: 1500px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* 100% der Höhe des Viewports */
-    background-color: white;
-    text-align: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
 }
 .Lachenzelg img {
-    width: 100vw;
-    object-fit: cover;
-}
-
-/*Einstellungen für alle Mannschaften */
-.Mannschaften {
-    font-size: 0.55vw;
-    /*border-top: 0.75vw solid gray*/
-}
-
-/*Einstellungen zur Darstellung der Bilde rund Texte der Manschaften */
-.Team {
-    display: flex;
-    height: auto;
-    /*border-bottom: 0.75vw solid gray;
-    border-top: none;*/
-}
-.Team img {
     width: 100%;
     height: auto;
-    max-width: 50%; /* Maximal 50% der Breite des Containers */
-    object-fit: contain; /* Beibehaltung des Seitenverhältnisses */
 }
-.TeamText {
+
+
+/*Einstellungen für Mannschaften*/
+.Mannschaften {
+    max-width: 1500px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+.Team {
+    display: flex;
+    align-items: stretch;
+    height: auto;
+    font-size: 1em;
+}
+.Team:nth-child(odd) {
+    flex-direction: row;
+}
+.Team:nth-child(even) {
+    flex-direction: row-reverse;
+}
+.Team img {
     width: 50%;
-    background-color: #2475ff;
+    height: auto;
+}
+.Team .Text {
+    width: 50%;
+    background-color: #00509c;
+    display: flex;
+    flex-direction: column; /* Text untereinander */
+    align-items: flex-start; /* Text linksbündig */
+    padding: 20px;
+    text-align: left; /* Text von oben nach unten */
+    line-height: 1.5;
+}
+
+
+/*Einstellungen Shop*/
+
+.shop-container {
+    max-width: 1500px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: flex-start;
+
+}
+
+.shop-item {
+    width: 300px;
+    margin: 37px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    overflow: hidden;
+}
+
+.shop-item img {
+    width: 100%;
+    height: auto;
+}
+
+.shop-item h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.shop-item p {
+    padding: 0 10px 10px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Einstellungen Feedback */
+.feedback{
+    max-width: 1500px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+.feedback-container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 5%;
-    box-sizing: border-box;
+    align-items: center;
 }
+
+.feedback-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.feedback-container form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.feedback-container label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.feedback-container input,
+.feedback-container textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+}
+
+.feedback-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00509c;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.feedback-container button:hover {
+    background-color: #003f7f;
+}
+
+/* Responsive Design */
+@media (max-width: 1700px) {
+    .header .logo {
+        left: 40px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .burger-menu {
+        display: block;
+    }
+
+    .burger-menu.active + .nav-container {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        border-top: 1px solid lightgrey;
+    }
+
+    .nav-container ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-container ul li {
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-container ul li a {
+        padding: 10px 20px;
+        width: 100%;
+        display: block;
+    }
+
+    .shop-item {
+        margin: 20px;
+    }
+}
+@media (max-width: 1000px) {
+
+
+    .header a {
+
+    }
+    .Mannschaften {
+        font-size: 1em;
+        width: 100%;
+    }
+    .Team {
+        width: 100%;
+        flex-direction: column;
+    }
+    .Team img {
+        width: 100%;
+        flex-direction: column;
+    }
+    .Team .Text {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
+    .Team:nth-child(odd) {
+        flex-direction: column;
+    }
+
+    .Team:nth-child(even) {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .header a {
+        font-size: 1em;
+    }
+
+    .Mannschaften {
+        font-size: 1em;
+    }
+
+    .Team {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .Team img, .Team .Text {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .Team:nth-child(odd) {
+        flex-direction: column;
+    }
+
+    .Team:nth-child(even) {
+        flex-direction: column;
+    }
+}
+
+

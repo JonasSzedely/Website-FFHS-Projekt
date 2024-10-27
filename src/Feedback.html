@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Futsal Lachenzelg</title>
 </head>
@@ -10,14 +11,48 @@
 <body>
 <!-- Abschnitt für den Header -->
 <div class="header" >
-  <a href="Mannschaften.html">Mannschaften</a>
-  <a href="Shop.html">Shop</a>
-  <a href="Feedback.html">Feedback</a>
+  <div class="logo">
+    <a href="Startseite.html">
+      <img src="media/logo_mini.png" alt="Startseite">
+    </a>
+  </div>
+  <div class="burger-menu" id="burger-menu">
+    &#9776; <!-- Unicode für das Burger-Icon -->
+  </div>
+  <div class="nav-container">
+    <div class ="nav">
+      <div class ="nav1">
+        <!--<a href="Startseite.html">Startseite</a>-->
+        <a href="Mannschaften.html">Mannschaften</a>
+      </div>
+      <div class ="nav2">
+        <a href="Shop.html">Shop</a>
+      </div>
+      <div class ="nav3">
+        <a href="Feedback.html">Feedback</a>
+      </div>
+    </div>
+  </div>
 </div>
 
 
 <!-- Abschnitt für das Feedbackformular -->
-<div class="Feedback">
+<div class="feedback">
+  <div class="feedback-container">
+    <h2>Feedback Formular</h2>
+    <form action="#" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">E-Mail:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Nachricht:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Absenden</button>
+    </form>
+  </div>
 </div>
 
 

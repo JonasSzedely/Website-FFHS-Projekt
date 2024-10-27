@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Futsal Lachenzelg</title>
 </head>
@@ -10,38 +11,75 @@
 <body>
 <!-- Abschnitt für den Header -->
 <div class="header" >
-  <a href="Mannschaften.html">Mannschaften</a>
-  <a href="Shop.html">Shop</a>
-  <a href="Feedback.html">Feedback</a>
+  <div class="logo">
+    <a href="Startseite.html">
+      <img src="media/logo_mini.png" alt="Startseite">
+    </a>
+  </div>
+  <div class="burger-menu" id="burger-menu">
+    &#9776; <!-- Unicode für das Burger-Icon -->
+  </div>
+  <div class="nav-container">
+    <div class ="nav">
+      <div class ="nav1">
+        <!--<a href="Startseite.html">Startseite</a>-->
+        <a href="Mannschaften.html">Mannschaften</a>
+      </div>
+      <div class ="nav2">
+        <a href="Shop.html">Shop</a>
+      </div>
+      <div class ="nav3">
+        <a href="Feedback.html">Feedback</a>
+      </div>
+    </div>
+  </div>
 </div>
 
 
 <!-- Abschnitt für die Shop Items -->
-<div class="Shop">
-<h1> Unser Shop </h1>
-  <div class="item1">
-    <img src="" alt="item1">
+<div class="shop-container">
+  <div class="shop-item">
+    <img src="https://via.placeholder.com/300" alt="Item 1">
+    <h3>Item 1</h3>
+    <p>Beschreibung des Items 1</p>
+  </div>
+  <div class="shop-item">
+    <img src="https://via.placeholder.com/300" alt="Item 2">
+    <h3>Item 2</h3>
+    <p>Beschreibung des Items 2</p>
+  </div>
+  <div class="shop-item">
+    <img src="https://via.placeholder.com/300" alt="Item 3">
+    <h3>Item 3</h3>
+    <p>Beschreibung des Items 3</p>
+  </div>
+  <div class="shop-item">
+    <img src="https://via.placeholder.com/300" alt="Item 3">
+    <h3>Item 4</h3>
+    <p>Beschreibung des Items 4</p>
+  </div>
+  <div class="shop-item">
+    <img src="https://via.placeholder.com/300" alt="Item 3">
+    <h3>Item 5</h3>
+    <p>Beschreibung des Items 5</p>
+  </div>
+  <div class="shop-item">
+    <img src="https://via.placeholder.com/300" alt="Item 3">
+    <h3>Item 6</h3>
+    <p>Beschreibung des Items 6</p>
+  </div>
+  <div class="shop-item">
+    <img src="https://via.placeholder.com/300" alt="Item 3">
+    <h3>Item 7</h3>
+    <p>Beschreibung des Items 7</p>
+  </div>
+  <div class="shop-item">
+    <img src="https://via.placeholder.com/300" alt="Item 3">
+    <h3>Item 8</h3>
+    <p>Beschreibung des Items 8</p>
   </div>
 
-  <div class="item2">
-    <img src="" alt="item2">
-  </div>
-
-  <div class="item3">
-    <img src="" alt="item3">
-  </div>
-
-  <div class="item4">
-    <img src="" alt="item4">
-  </div>
-
-  <div class="item5">
-    <img src="" alt="item5">
-  </div>
-
-  <div class="item4">
-    <img src="" alt="item6">
-  </div>
+  <!-- Weitere Items hier hinzufügen -->
 </div>
 </body>
 </html>

@@ -3,76 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Futsal Lachenzelg</title>
 </head>
 
-
 <body>
 <!-- Abschnitt für den Header -->
 <div class="header" >
-  <a href="Mannschaften.html">Mannschaften</a>
-  <a href="Shop.html">Shop</a>
-  <a href="Feedback.html">Feedback</a>
-
+  <div class="logo">
+    <a href="Startseite.html">
+      <img src="media/logo_mini.png" alt="Startseite">
+    </a>
+  </div>
+  <div class="burger-menu" id="burger-menu">
+    &#9776; <!-- Unicode für das Burger-Icon -->
+  </div>
+  <div class="nav-container">
+    <div class ="nav">
+      <div class ="nav1">
+      <!--<a href="Startseite.html">Startseite</a>-->
+      <a href="Mannschaften.html">Mannschaften</a>
+      </div>
+      <div class ="nav2">
+      <a href="Shop.html">Shop</a>
+      </div>
+      <div class ="nav3">
+      <a href="Feedback.html">Feedback</a>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="Lachenzelg">
-  <img src="media/LogoLachenzelg.png" alt="Logo Lachenzelg">
-</div>
+
 
 <!-- Abschnit für die Mannschaften  -->
 <div class="Mannschaften">
 
   <!-- Team Lachenzelg -->
-  <div class="Team">
-    <img src="media/TeamLachenzelg.PNG" alt="Team Lachenzelg Bild">
-    <div class="TeamText">
-      <h1>Futsal Team Lachenzelg</h1>
-      <h2>Gründungsjahr: 2003</h2>
-      <h2>Meisterschaftstitel: 9</h2>
-      <h2>Futsal Team Lachenzelg, gegründet 2003, ist das älteste Team der Organisation.</h2>
-      <h2>Bis 2010 nahm das Futsal Team Lachenzelg hauptsächlich an Juniorenturnieren teil, doch an der ersten Futsal Meisterschaft der "Amigos de Futsal" kletterten sie gleich auf den ersten Rang und zum Meistertitel. Das Kader besteht weiterhin aus denselben Spielern wie vor 10 Jahren, sicherlich einer der Gründe, weswegen er die erfolgreichste Mannschaft im Amigos de Futsal Verband bildet.</h2>
-      <h2>Acht Meisterschaftspokale schmücken das Team mittlerweile, welches seit 2013 jeden Meistertitel verteidigen konnten.</h2>
+  <section class="Team">
+    <div class="Text">
+      <h4>Futsal Team Lachenzelg</h4>
+      <h5>Gründungsjahr: 2003</h5>
+      <p>Meisterschaftstitel: 9</p>
+      <p>Futsal Team Lachenzelg, gegründet 2003, ist das älteste Team der Organisation. Bis 2010 nahm das Futsal Team Lachenzelg hauptsächlich an Juniorenturnieren teil,
+        doch an der ersten Futsal Meisterschaft der "Amigos de Futsal" kletterten sie gleich auf den ersten Rang und zum Meistertitel. Das Kader besteht weiterhin aus denselben
+        Spielern wie vor 10 Jahren, sicherlich einer der Gründe, weswegen er die erfolgreichste Mannschaft im Amigos de Futsal Verband bildet.
+        Acht Meisterschaftspokale schmücken das Team mittlerweile, welches seit 2013 jeden Meistertitel verteidigen konnten.</p>
     </div>
-  </div>
+    <img src="media/TeamLachenzelg.PNG" alt="Team Lachenzelg Bild">
+  </section>
 
   <!-- Team Christal Palace -->
-  <div class="Team">
-    <div class="TeamText">
-      <h1>Futsal Christal Palace Lachenzelg</h1>
-      <h2>Gründungsjahr: 2010</h2>
-      <h2>Meisterschaftstitel: 0</h2>
-      <h2>Futsal Team Lachenzelg, gegründet 2003, ist das älteste Team der Organisation.</h2>
-      <h2>2010 begann Hurti Wiedmer die Futsal Sélection Lachenzelg, das "Farm Team" der Organisation, zu trainieren. Seit ihrer Gründung unterzog sie sich mehreren Rochaden mit jungen Spielern, die der Mannschaft beitraten und sie wieder verliessen. Seit 2020 trägt die Mannschaft den Namen Futsal Crystal Palace Lachenzelg und spielt mit einem festen Kader unter Kapitän Tim.</h2>
-      <h2>Crystal Palace verfügt mittlerweile über einen guten Zusammenhalt und konnte schon an mehreren Turnieren ihr Können beweisen. Der Meistertitel bleibt jedoch bis jetzt aus.</h2>
+  <section class="Team">
+    <div class="Text">
+      <h4>Futsal Christal Palace Lachenzelg</h4>
+      <h5>Gründungsjahr: 2010</h5>
+      <p>Meisterschaftstitel: 0</p>
+      <p>Futsal Team Lachenzelg, gegründet 2003, ist das älteste Team der Organisation. 2010 begann Hurti Wiedmer die Futsal Sélection Lachenzelg, das "Farm Team" der Organisation, zu trainieren.
+        Seit ihrer Gründung unterzog sie sich mehreren Rochaden mit jungen Spielern, die der Mannschaft beitraten und sie wieder verliessen. Seit 2020 trägt die Mannschaft den Namen
+        Futsal Crystal Palace Lachenzelg und spielt mit einem festen Kader unter Kapitän Tim. Crystal Palace verfügt mittlerweile über einen guten Zusammenhalt und konnte schon an
+        mehreren Turnieren ihr Können beweisen. Der Meistertitel bleibt jedoch bis jetzt aus.</p>
     </div>
     <img src="media/ChristalPalace.PNG" alt="Team Christal Palace Bild">
-  </div>
+  </section>
 
   <!-- Team Afghanistan -->
-  <div class="Team">
-    <img src="media/TeamAfghanistan.PNG" alt="Team Afghanistan Bild">
-    <div class="TeamText">
-      <h1>Futsal Afghanistan Lachenzelg</h1>
-      <h2>Gründungsjahr: 2017</h2>
-      <h2>Meisterschaftstitel: 0</h2>
-      <h2>Zwei afghanische Spieler kamen 2016 unter die Führung von Hurti Wiedmer. Seit 2017 spielen sie und ihre Freunde als Futsal Afghanistan Lachenzelg.</h2>
-      <h2>Die Mannschaft besteht ausschliesslich aus </h2>
-      <h2>...</h2>
+  <section class="Team">
+    <div class="Text">
+      <h4>Futsal Afghanistan Lachenzelg</h4>
+      <h5>Gründungsjahr: 2017</h5>
+      <p>Meisterschaftstitel: 0</p>
+      <p>Zwei afghanische Spieler kamen 2016 unter die Führung von Hurti Wiedmer. Seit 2017 spielen sie und ihre Freunde als Futsal Afghanistan Lachenzelg. Die Mannschaft besteht
+        ausschliesslich aus afghanischen Flüchtlingen, welche mit viel Leidenschaft mit Crystal Palace regelmässig trainieren. Zwar blieben bis jetzt Erfolge an Turnieren und der Meisterschaft aus,
+        aber sie hat enorme Fortschritte gemacht unter Wiedmer.</p>
     </div>
-  </div>
+    <img src="media/TeamAfghanistan.PNG" alt="Team Afghanistan Bild">
+  </section>
 
   <!-- Team International -->
-  <div class="Team">
-    <div class="TeamText">
-      <h1>Futsal Afghanistan Lachenzelg</h1>
-      <h2>Gründungsjahr: 2017</h2>
-      <h2>Team Lachenzelg International vertritt die Futsal Organisation Lachenzelg auf internationaler Ebene.</h2>
-      <h2>Die Mannschaft besteht aus Spielern des Futsal Team Lachenzelg, wenigen Spielern der Sélection und zum Teil auch Gästen aus Höngg. Der 1. FC Futsal Innsbruck wie auch Brasil Bludenz gehören zu den Gegnern, gegen die Team International schon öfters gespielt hat.</h2>
+  <section class="Team">
+    <div class="Text">
+      <h4>Team Lachenzelg International</h4>
+      <h5>Gründungsjahr: 2017</h5>
+      <p>Team Lachenzelg International vertritt die Futsal Organisation Lachenzelg auf internationaler Ebene. Die Mannschaft besteht aus Spielern des Futsal Team Lachenzelg,
+        wenigen Spielern der Sélection und zum Teil auch Gästen aus Höngg. Der 1. FC Futsal Innsbruck wie auch Brasil Bludenz gehören zu den Gegnern, gegen die Team International schon öfters gespielt hat.</p>
     </div>
     <img src="media/TeamInternational.PNG" alt="Team International Bild">
-  </div>
+  </section>
 </div>
 
 </body>
