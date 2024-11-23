@@ -6,31 +6,22 @@
   <script src="js/script.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Futsal Lachenzelg</title>
+
 </head>
 
 <body>
 <!-- Abschnitt für den Header -->
 <div class="header" >
-  <div class="logo">
-    <a href="Startseite.html">
-      <img src="media/logo_mini.png" alt="Startseite">
-    </a>
-  </div>
+  <img src="media/logo-lachenzelg-header.png" alt="Logo">
   <div class="burger-menu" id="burger-menu">
     &#9776; <!-- Unicode für das Burger-Icon -->
   </div>
   <div class="nav-container">
     <div class ="nav">
-      <div class ="nav1">
-        <!--<a href="Startseite.html">Startseite</a>-->
-        <a href="Mannschaften.html">Mannschaften</a>
-      </div>
-      <div class ="nav2">
-        <a href="Shop.html">Shop</a>
-      </div>
-      <div class ="nav3">
-        <a href="Feedback.html">Feedback</a>
-      </div>
+      <a href="Startseite.html">Startseite</a>
+      <a href="Mannschaften.html">Mannschaften</a>
+      <a href="Shop.html">Shop</a>
+      <a href="Feedback.html">Feedback</a>
     </div>
   </div>
 </div>
@@ -40,18 +31,34 @@
 <div class="feedback">
   <div class="feedback-container">
     <h2>Feedback Formular</h2>
-    <form action="#" method="post">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">E-Mail:</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="message">Nachricht:</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
-
+    <form id="feedback-form" novalidate>
+      <div class="form-control" id="name-control">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Ihr Name">
+        <span class="error-message"></span>
+      </div>
+      <div class="form-control" id="email-control">
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" name="email" placeholder="Ihre E-Mail-Adresse">
+        <span class="error-message"></span>
+      </div>
+      <div class="form-control" id="design-rating-control">
+        <label for="design-rating">Bewertung Design</label>
+        <input type="number" id="design-rating" name="design-rating" placeholder="Ihre Bewertung (1-10)">
+        <span class="error-message"></span>
+      </div>
+      <div class="form-control" id="components-rating-control">
+        <label for="components-rating">Bewertung Komponenten</label>
+        <input type="number" id="components-rating" name="components-rating" placeholder="Ihre Bewertung (1-10)">
+        <span class="error-message"></span>
+      </div>
+      <div class="form-control" id="comment-control">
+        <label for="comment">Kommentar</label>
+        <textarea id="comment" name="comment" placeholder="Optionaler Kommentar"></textarea>
+      </div>
       <button type="submit">Absenden</button>
     </form>
+    <script src="js/feedback.js" defer></script>
   </div>
 </div>
 
