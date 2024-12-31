@@ -1,91 +1,104 @@
-document.getElementById('feedback-form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Verhindert das Absenden des Formulars
+// Globale Variablen zur Verwaltung des Feedbacks
+let feedbackList = [];
+let currentIndex = 0;
+let autoScrollInterval = null;
 
-    // Felder abrufen
-    const nameField = document.getElementById('name');
-    const emailField = document.getElementById('email');
-    const designRatingField = document.getElementById('design-rating');
-    const componentsRatingField = document.getElementById('components-rating');
-    const commentField = document.getElementById('comment');
+// Funktion zum Abrufen von Feedbacks
+async function fetchFeedbacks() {
+    const url = 'https://web-modules.dev/api/v1/feedback';
+    const token = '600|pHk6AjiSXcey22Lg5nd1uFIGKqYW7Gjw7BKD65JU04cca9bf';
 
-    // Validierung
-    let isValid = true;
+    try {
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            }
+        });
 
-    // Name Validierung
-    if (!nameField.value.trim()) {
-        setError(nameField, 'Name ist erforderlich');
-        isValid = false;
-    } else if (nameField.value.length < 3 || nameField.value.length > 100) {
-        setError(nameField, 'Name muss zwischen 3 und 100 Zeichen enthalten');
-        isValid = false;
+        if (response.ok) {
+            const responseData = await response.json();
+            feedbackList = responseData.feedbacks || [];
+            if (feedbackList.length > 0) {
+                currentIndex = 0;
+                displayFeedback(currentIndex);
+
+            } else {
+                document.getElementById('feedback-text').textContent = 'Keine Feedbacks verfügbar.';
+            }
+        } else {
+            console.error('Fehler beim Abrufen der Feedbacks:', await response.json());
+            document.getElementById('feedback-text').textContent = 'Fehler beim Abrufen der Feedbacks.';
+        }
+    } catch (error) {
+        console.error('Ein Fehler ist aufgetreten:', error);
+        document.getElementById('feedback-text').textContent = 'Ein Fehler ist aufgetreten: ' + error.message;
+    }
+}
+
+// Funktion zur Anzeige eines einzelnen Feedbacks
+function displayFeedback(index) {
+    if (feedbackList.length === 0) return;
+
+    const feedback = feedbackList[index];
+    const feedbackName = `
+        ${feedback.name}
+    `;
+    const feedbackMail = `
+        ${feedback.email}
+    `;
+    const feedbackDesign = `
+        ${feedback.rating_design}/10
+    `;
+    const feedbackKomponenten = `
+        ${feedback.rating_components}/10
+    `;
+    const feedbackKommentar = `
+        ${feedback.comment || 'Kein Kommentar'}
+    `;
+
+    document.getElementById('feedback-name').textContent = feedbackName;
+    document.getElementById('feedback-mail').textContent = feedbackMail;
+    document.getElementById('feedback-design').textContent = feedbackDesign;
+    document.getElementById('feedback-komponenten').textContent = feedbackKomponenten;
+    document.getElementById('feedback-kommentar').textContent = feedbackKommentar;
+}
+
+// Event-Listener für Navigationsbuttons
+document.getElementById('prev-feedback').addEventListener('click', function () {
+    if (currentIndex > 0) {
+        currentIndex--;
     } else {
-        setSuccess(nameField);
+        // Wenn der aktuelle Index 0 ist, springe zum letzten Eintrag
+        currentIndex = feedbackList.length - 1;
     }
-
-    // E-Mail Validierung
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailField.value.trim()) {
-        setError(emailField, 'E-Mail ist erforderlich');
-        isValid = false;
-    } else if (!emailRegex.test(emailField.value) || emailField.value.length > 200) {
-        setError(emailField, 'Bitte geben Sie eine gültige E-Mail-Adresse ein (max. 200 Zeichen)');
-        isValid = false;
-    } else {
-        setSuccess(emailField);
-    }
-
-    // Bewertung Design Validierung
-    if (!designRatingField.value.trim()) {
-        setError(designRatingField, 'Bewertung Design ist erforderlich');
-        isValid = false;
-    } else if (!isIntegerInRange(designRatingField.value, 1, 10)) {
-        setError(designRatingField, 'Bitte geben Sie eine Ganzzahl zwischen 1 und 10 ein');
-        isValid = false;
-    } else {
-        setSuccess(designRatingField);
-    }
-
-    // Bewertung Komponenten Validierung
-    if (!componentsRatingField.value.trim()) {
-        setError(componentsRatingField, 'Bewertung Komponenten ist erforderlich');
-        isValid = false;
-    } else if (!isIntegerInRange(componentsRatingField.value, 1, 10)) {
-        setError(componentsRatingField, 'Bitte geben Sie eine Ganzzahl zwischen 1 und 10 ein');
-        isValid = false;
-    } else {
-        setSuccess(componentsRatingField);
-    }
-
-    // Kommentar: Keine Validierung erforderlich, da freiwillig
-    setSuccess(commentField);
-
-    // Wenn alles gültig ist
-    if (isValid) {
-        alert('Formular erfolgreich abgesendet!');
-        //Server?
-    }
+    displayFeedback(currentIndex);
 });
 
-// Hilfsfunktionen
-function setError(input, message) {
-    const control = input.parentElement;
-    control.className = 'form-control error';
-    const errorMessage = control.querySelector('.error-message');
-    if (errorMessage) {
-        errorMessage.textContent = message;
+document.getElementById('next-feedback').addEventListener('click', function () {
+    if (currentIndex < feedbackList.length - 1) {
+        currentIndex++;
+    } else {
+        // Wenn der aktuelle Index der letzte Eintrag ist, springe zum ersten Eintrag
+        currentIndex = 0;
     }
+    displayFeedback(currentIndex);
+});
+
+
+
+function startAutoScroll() {
+    autoScrollInterval = setInterval(function () {
+        if (currentIndex < feedbackList.length - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0; // Zurück zum Anfang, wenn das Ende erreicht ist
+        }
+        displayFeedback(currentIndex);
+        }, 5000); // Alle 20 Sekunden
 }
 
-function setSuccess(input) {
-    const control = input.parentElement;
-    control.className = 'form-control success';
-    const errorMessage = control.querySelector('.error-message');
-    if (errorMessage) {
-        errorMessage.textContent = '';
-    }
-}
 
-function isIntegerInRange(value, min, max) {
-    const num = parseInt(value, 10);
-    return Number.isInteger(num) && num >= min && num <= max;
-}
+// Feedbacks beim Laden der Seite abrufen
+document.addEventListener('DOMContentLoaded', fetchFeedbacks);
