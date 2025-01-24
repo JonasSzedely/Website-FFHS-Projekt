@@ -1,0 +1,203 @@
+#contentBig {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none; /* Wird sichtbar, wenn benötigt */
+    background-color: rgba(0, 0, 0, 0.8); /* Hintergrund abdunkeln */
+    justify-content: center; /* Horizontale Zentrierung */
+    align-items: center; /* Vertikale Zentrierung */
+    z-index: 9999; /* Ganz oben anzeigen */
+    cursor: pointer;
+}
+
+#bigImage {
+    width: 1360px; /* Festgelegte Breite */
+    height: 800px; /* Festgelegte Höhe */
+    object-fit: cover; /* Zuschneiden des Bildes */
+    display: block; /* Sicherstellen, dass es als Block angezeigt wird */
+    border-radius: 10px; /* Optional: Abgerundete Ecken */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional: Schatten */
+
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* Verhindert Zeilenumbrüche */
+    border: 0;
+}
+
+.shop-container {
+    max-width: 1500px;
+    display: grid;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: flex-start;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.product img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.product h2 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.product p {
+    margin: 10px 0;
+}
+
+.product .price {
+    font-weight: bold;
+    color: red;
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.product .category {
+    margin: 10px 0;
+    color: #00509c;
+    font-weight: bold;
+}
+
+.product .skuNumber {
+    margin: 10px 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.product .likes {
+    color: rgba(0, 80, 156, 0.75);
+    margin: 10px 0;
+    font-size: 0.9rem;
+}
+
+.like-icon {
+    cursor: pointer;
+    font-size: 18px;
+    color: red;
+    transition: color 0.3s;
+}
+
+.like-icon:hover {
+    color: #00509c;
+}
+
+/* Dropdown und Buttons */
+.controls {
+    max-width: 1500px;
+    display: grid;
+    font-size: 1em;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: flex-start;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+#sort-dropdown {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #00509c;
+    border-radius: 5px;
+    background-color: white;
+    color: #00509c;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+
+/* Kategorien-Buttons */
+.controls .category-toggle {
+    border: 1px solid #00509c;
+    background-color: #00509c; /* Blau für aktive Kategorien */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1em;
+}
+
+.controls .category-toggle.active {
+    background-color: #00509c; /* Blau für aktiv */
+    color: white;
+}
+
+.controls .category-toggle:not(.active) {
+    background-color: white; /* Weiß für inaktiv */
+    color: #00509c;
+}
+
+.controls .category-toggle:hover {
+    background-color: #003f7d; /* Dunkleres Blau beim Hover */
+    color: white;
+}
+
+/* Fehlermeldung */
+#error-message {
+    display: none;
+    color: red;
+    font-size: 1.2em;
+    margin: 20px 0;
+    text-align: center;
+}
+
+@media (max-width: 1500px) {
+    #bigImage {
+        width: 680px; /* Festgelegte Breite */
+        height: 400px; /* Festgelegte Höhe */
+    }
+}
+@media (max-width: 910px) {
+    .controls {
+        grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    #bigImage {
+        width: 510px; /* Festgelegte Breite */
+        height: 300px; /* Festgelegte Höhe */
+    }
+}
+@media (max-height: 350px) {
+    #bigImage {
+        width: 510px; /* Festgelegte Breite */
+        height: 300px; /* Festgelegte Höhe */
+    }
+}
+@media (max-width: 550px) {
+    #contentBig {
+        display: none;
+    }
+    .product img {
+        cursor: default;
+    }
+}

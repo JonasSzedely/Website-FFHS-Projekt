@@ -21,7 +21,7 @@ async function fetchFeedbacks() {
             const responseData = await response.json();
             feedbackList = responseData.feedbacks || [];
             if (feedbackList.length > 0) {
-                currentIndex = 0;
+                currentIndex = feedbackList.length - 1; // Immer das neueste Feedback anzeigen
                 displayFeedback(currentIndex);
 
             } else {

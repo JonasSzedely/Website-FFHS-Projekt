@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/style-feedback.css">
   <script src="js/script.js" defer></script>
+  <script src="js/feedback-formular.js" defer></script>
+  <script src="js/feedback-output.js" defer></script>
+  <script src="js/feedback-summary.js" defer></script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Futsal Lachenzelg</title>
-
 </head>
 
 <body>
@@ -18,10 +21,11 @@
   </div>
   <div class="nav-container">
     <div class ="nav">
-      <a href="Startseite.html">Startseite</a>
-      <a href="Mannschaften.html">Mannschaften</a>
-      <a href="Shop.html">Shop</a>
-      <a href="Feedback.html">Feedback</a>
+      <a href="index.html">Startseite</a>
+      <a href="mannschaften.html">Mannschaften</a>
+      <a href="shop.html">Shop</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="epic.html">EPIC</a>
     </div>
   </div>
 </div>
@@ -37,28 +41,28 @@
         <input type="text" id="name" name="name" placeholder="Ihr Name">
         <span class="error-message"></span>
       </div>
-      <div class="form-control" id="email-control">
+      <div class="form-control">
         <label for="email">E-Mail</label>
         <input type="email" id="email" name="email" placeholder="Ihre E-Mail-Adresse">
         <span class="error-message"></span>
       </div>
-      <div class="form-control" id="design-rating-control">
+      <div class="form-control">
         <label for="design-rating">Bewertung Design</label>
         <input type="number" id="design-rating" name="design-rating" placeholder="Ihre Bewertung (1-10)">
         <span class="error-message"></span>
       </div>
-      <div class="form-control" id="components-rating-control">
+      <div class="form-control">
         <label for="components-rating">Bewertung Komponenten</label>
         <input type="number" id="components-rating" name="components-rating" placeholder="Ihre Bewertung (1-10)">
         <span class="error-message"></span>
       </div>
-      <div class="form-control" id="comment-control">
+      <div class="form-control">
         <label for="comment">Kommentar</label>
         <textarea id="comment" name="comment" placeholder="Optionaler Kommentar"></textarea>
       </div>
       <button type="submit">Absenden</button>
     </form>
-    <script src="js/feedback-formular.js" defer></script>
+
   </div>
 </div>
 
@@ -66,28 +70,25 @@
 <div class="feedback">
   <div class="feedback-display">
     <div id="feedback-summary">
-      <script src="js/feedbacksummary.js" defer></script>
       <!-- Hier wird die Tabelle mit der Auswertung generiert -->
     </div>
     <div id="feedback-content">
-
       <div id="feedback-elemente">
-        <h4>Feedback von Besucher</h4>
-        <script src="js/feedback.js" defer></script>
+        <h2>Feedbacks</h2>
         <!-- Name und E-Mail -->
-        <p id="feedback-name-title" class="feedback-title">Name:</p>
-        <p id="feedback-mail-title" class="feedback-title">E-Mail:</p>
+        <p class="feedback-title">Name:</p>
+        <p class="feedback-title">E-Mail:</p>
         <p id="feedback-name" class="feedback-content">Hier wird der Name angezeigt...</p>
         <p id="feedback-mail" class="feedback-content">Hier wird die E-Mail angezeigt...</p>
 
         <!-- Design und Komponenten -->
-        <p id="feedback-design-title" class="feedback-title">Design:</p>
-        <p id="feedback-komponenten-title" class="feedback-title">Komponenten:</p>
+        <p class="feedback-title">Design:</p>
+        <p class="feedback-title">Komponenten:</p>
         <p id="feedback-design" class="feedback-content">Hier wird die Design-Bewertung angezeigt...</p>
         <p id="feedback-komponenten" class="feedback-content">Hier wird die Komponenten-Bewertung angezeigt...</p>
 
         <!-- Kommentar -->
-        <p id="feedback-kommentar-title" class="feedback-title">Kommentar:</p>
+        <p class="feedback-title">Kommentar:</p>
         <p id="feedback-kommentar" class="feedback-content">Hier wird der Kommentar angezeigt...</p>
 
         <!-- Navigation-Buttons -->

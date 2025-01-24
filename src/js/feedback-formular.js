@@ -63,18 +63,22 @@ feedbackForm.addEventListener('submit', async function (event) {
 
     // Wenn alles gültig ist
     if (isValid) {
-        // Daten als JSON vorbereiten
         const feedbackData = {
             name: nameField.value.trim(),
             email: emailField.value.trim(),
             rating_design: parseInt(designRatingField.value.trim(), 10),
             rating_components: parseInt(componentsRatingField.value.trim(), 10),
-            comment: commentField.value.trim()
         };
+
+        // Kommentar nur hinzufügen, wenn vorhanden
+        if (commentField.value.trim()) {
+            feedbackData.comment = commentField.value.trim();
+        }
 
         // Feedback senden
         await sendFeedback(feedbackData);
     }
+
 });
 
 // Asynchrone Funktion für das Senden des Feedbacks
@@ -93,9 +97,26 @@ async function sendFeedback(feedbackData) {
         });
 
         if (response.ok) {
-            alert('Feedback erfolgreich gesendet!');
+            // Absende-Button aktualisieren
+            const submitButton = document.querySelector('#feedback-form button[type="submit"]');
+            submitButton.style.backgroundColor = 'green'; // Button grün färben
+            submitButton.style.color = 'white';          // Textfarbe weiß für bessere Lesbarkeit
+            submitButton.textContent = 'Erfolgreich versendet'; // Text ändern
+
+
+            // Formular zurücksetzen
             document.getElementById('feedback-form').reset();
             resetFormState();
+
+            // Button nach 5 Sekunden zurücksetzen (optional)
+            setTimeout(() => {
+                submitButton.style.backgroundColor = ''; // Standardfarbe wiederherstellen
+                submitButton.style.color = '';          // Standardfarbe wiederherstellen
+                submitButton.textContent = 'Absenden';  // Standardtext wiederherstellen
+            }, 5000);
+
+            await fetchFeedbacks(); // Feedback-Liste neu laden
+            generateFeedbackSummary(); // Feedback-Zusammenfassung neu generieren
         } else {
             const errorData = await response.json();
             console.error('Fehler beim Senden des Feedbacks:', errorData);
@@ -106,6 +127,7 @@ async function sendFeedback(feedbackData) {
         alert('Ein Fehler ist aufgetreten: ' + error.message);
     }
 }
+
 
 // Hilfsfunktionen
 function setError(input, message) {

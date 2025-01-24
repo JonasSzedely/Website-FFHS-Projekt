@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/style-shop.css">
+  <script src="js/script.js" defer></script>
+  <script src="js/shop.js" defer></script>
+  <script src="js/errorhandler.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Futsal Lachenzelg</title>
+</head>
+
+<body>
+<!-- Header -->
+<div class="header">
+  <img src="media/logo-lachenzelg-header.png" alt="Logo">
+  <div class="burger-menu" id="burger-menu">
+    &#9776; <!-- Unicode für das Burger-Icon -->
+  </div>
+  <div class="nav-container">
+    <div class="nav">
+      <a href="index.html">Startseite</a>
+      <a href="mannschaften.html">Mannschaften</a>
+      <a href="shop.html">Shop</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="epic.html">EPIC</a>
+    </div>
+  </div>
+</div>
+
+<div class="controls">
+  <label for="sort-dropdown" class="visually-hidden">Sortieren:</label>
+  <select id="sort-dropdown">
+    <option value="alphabet" selected>Alphabetisch</option>
+    <option value="mostLikes">Meiste Likes</option>
+    <option value="priceDescending">Preis absteigend</option>
+    <option value="priceAscending">Preis aufsteigend</option>
+    <option value="gamingFirst">Gaming zuerst</option>
+    <option value="moebelFirst">Möbel zuerst</option>
+    <option value="transportFirst">Transport zuerst</option>
+  </select>
+  <button class="category-toggle active" data-category="Gaming">Gaming</button>
+  <button class="category-toggle active" data-category="Möbel">Möbel</button>
+  <button class="category-toggle active" data-category="Transport">Transport</button>
+</div>
+<div id="contentBig" onclick="closeImage()">
+  <span class="close">&times;</span>
+  <img class="big-Image" id="bigImage" src="media/placeholder.png" alt="Vergrößertes Produktbild">
+</div>
+<div id="error-message">Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.</div>
+<div class="shop-container" id="shop-container"></div>
+
+
+<div class="footer">
+  <p>Copyright © 2025
+    <a href="mailto:jonas.szedely@students.ffhs.ch">Jonas Szedely</a>. All Rights Reserved.
+  </p>
+</div>
+</body>
+</html>

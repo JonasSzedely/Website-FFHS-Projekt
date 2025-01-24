@@ -1,0 +1,12 @@
+/*Einstellungen für Startseite*/
+.Lachenzelg {
+    max-width: 1500px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 10px;
+}
+.Lachenzelg img {
+    width: 100%;
+    height: auto;
+}

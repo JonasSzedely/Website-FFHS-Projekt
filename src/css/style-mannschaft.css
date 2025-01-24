@@ -1,0 +1,80 @@
+
+
+/*Einstellungen für Mannschaften*/
+.mannschaften {
+    max-width: 1500px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 5px;
+
+}
+.team {
+    display: flex;
+    align-items: stretch;
+    height: auto;
+    font-size: 1em;
+    padding: 5px;
+}
+.team:nth-child(odd) {
+    flex-direction: row;
+}
+.team:nth-child(even) {
+    flex-direction: row-reverse;
+}
+.team img {
+    width: 50%;
+    height: auto;
+
+}
+.team .text {
+    width: 50%;
+    background-color: #00509c;
+    display: flex;
+    flex-direction: column; /* Text untereinander */
+    align-items: flex-start; /* Text linksbündig */
+    padding: 20px;
+    text-align: left; /* Text von oben nach unten */
+    line-height: 1.5;
+}
+
+
+
+/* Responsive Design */
+
+
+@media (max-width: 1000px) {
+
+
+    .mannschaften {
+        font-size: 1em;
+        width: 100%;
+    }
+
+    .team {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .team img {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .team .text {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .team:nth-child(odd) {
+        flex-direction: column;
+    }
+
+    .team:nth-child(even) {
+        flex-direction: column;
+    }
+}
+
+
+

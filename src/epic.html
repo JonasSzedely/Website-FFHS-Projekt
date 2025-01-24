@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/style-epic.css">
+  <script src="js/epic.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NASA EPIC Bilder der Erde</title>
+</head>
+<body>
+<!-- Header -->
+<div class="header">
+  <img src="media/logo-lachenzelg-header.png" alt="Logo">
+  <div class="nav-container">
+    <div class="nav">
+      <a href="index.html">Startseite</a>
+      <a href="mannschaften.html">Mannschaften</a>
+      <a href="shop.html">Shop</a>
+      <a href="feedback.html">Feedback</a>
+      <a href="epic.html">EPIC</a>
+    </div>
+  </div>
+</div>
+
+<!-- Main Content -->
+<div class="nasaTitel">
+  <h2>NASA EPIC Bilder</h2>
+</div>
+<div class="content">
+
+  <div id="controls">
+    <button class="previmagebig" id="prev-image"><</button>
+    <label for="date">Datum:</label>
+    <input type="date" id="date">
+    <span id="timestamp">--:--:--<span class="time-label">Uhr</span></span>
+    <button class="nextimagebig" id="next-image">></button>
+    <button class="previmagesmall" id="prev-image-small"><</button>
+    <button class="nextimagesmall" id="next-image-small">></button>
+    <button id="load-image">Bilder laden</button>
+    <button id="newest-image">Neustes Bild</button>
+  </div>
+  <p id="error-message">Fehler beim Laden des Bildes. Bitte versuchen Sie es erneut.</p>
+  <div id="image-container">
+    <img id="earth-image" src="" alt="Bild der Erde">
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>Copyright &copy; 2025 <a href="mailto:jonas.szedely@students.ffhs.ch">Jonas Szedely</a>. All Rights Reserved.</p>
+</div>
+</body>
+</html>

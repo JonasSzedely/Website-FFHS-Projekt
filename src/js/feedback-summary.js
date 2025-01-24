@@ -50,10 +50,6 @@ function generateFeedbackSummary() {
 }
 
 // Feedbacks beim Laden der Seite abrufen und nach Absenden auswerten
-document.addEventListener('DOMContentLoaded', () => {
-    fetchFeedbacks().then(() => {
-        generateFeedbackSummary();
-    });
-});
+fetchFeedbacks().then(() => generateFeedbackSummary());
 
 
